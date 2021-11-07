@@ -1,11 +1,17 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { globalTheme } from '../assets/styles/global'
+import Header from '../components/ui/Header'
+import Layout from '../components/containers/Layout'
+import CommissionersMap from '../components/elements/CommissionersMap'
 
 const CommissionersScreen = () => {
     return (
-        <View>
-            <Text>b</Text>
-        </View>
+        <>
+            <Header />
+            <Layout color={globalTheme.colors.terciary} pv={0} ph={0}>
+                <CommissionersMap />
+            </Layout>
+        </>
     )
 }
 

@@ -1,10 +1,10 @@
 import { StyleSheet } from "react-native";
 
-export const style = (color) => StyleSheet.create({
+export const style = (color, ph = 30, pv = 50) => StyleSheet.create({
     container: {
         flex: 1,
-        paddingHorizontal: 30,
-        paddingVertical: 50,
+        paddingHorizontal: ph,
+        paddingVertical: pv,
         backgroundColor: color,
     },
 });
