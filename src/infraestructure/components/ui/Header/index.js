@@ -8,13 +8,14 @@ import { styles } from './style';
 
 const Header = () => {
 
-    const { dispatchAuth } = React.useContext(AuthContext)
+    const { authStore, dispatchAuth } = React.useContext(AuthContext)
+
 
     return (
         <View style={styles.container}>
             <View style={styles.containerUser}>
                 <FontAwesome name="user-circle-o" size={24} color="white" />
-                <Text style={styles.nameUser} >Carmen GAAAA</Text>
+                <Text style={styles.nameUser} >{authStore.user.fullName}</Text>
             </View>
             <Ionicons name="log-out-outline" size={24} color="white" style={{ marginTop: 18 }} onPress={() => authLogout(dispatchAuth)} />
         </View>

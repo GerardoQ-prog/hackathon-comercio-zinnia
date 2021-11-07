@@ -16,6 +16,5 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 10,
         fontSize: 16,
-        fontFamily: 'Raleway'
     }
 })

@@ -7,6 +7,7 @@ import Images from '../../../assets/images/Images'
 import { useForm } from '../../../hooks/useForm'
 import { ButtonRegister, ButtonSecondary } from '../../ui/Buttons'
 import { InputPassword, InputText } from '../../ui/Inputs'
+import { styles } from './style'
 
 
 const FormLogin = () => {
@@ -22,12 +23,12 @@ const FormLogin = () => {
     const handlerViewRegister = () => navigator.navigate('Register')
 
     const handlerSubmit = () => {
-        authLogin(dispatchAuth)
+        authLogin(dispatchAuth, form)
     }
 
     return (
         <KeyboardAvoidingView behavior="position">
-            <View>
+            <View style={styles.container}>
                 <Image source={Images.logo} style={{ marginLeft: 30 }} />
                 <InputText label="Correo" value={form.email} onChangeText={onChange} name="email" />
                 <InputPassword label="Contraseña" value={form.password} onChangeText={onChange} name="password" />

@@ -2,8 +2,8 @@ import { StyleSheet } from "react-native";
 import { globalTheme } from "../../../assets/styles/global";
 
 export const styles = StyleSheet.create({
-    containerButton: {
-        marginTop: 100
+    container: {
+        marginVertical: 20
     },
     text: {
         color: globalTheme.colors.text,

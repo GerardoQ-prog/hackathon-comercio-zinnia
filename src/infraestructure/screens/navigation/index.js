@@ -5,12 +5,13 @@ import { PublicNavigator } from './public.navigator'
 
 export const Navigation = () => {
     const { authStore } = React.useContext(AuthContext)
-    console.log(authStore)
+
+    console.log('authStore', authStore)
 
     return (
         <>
             {
-                authStore.isLogged ? <AppNavigator /> : <PublicNavigator />
+                authStore.access_token ? <AppNavigator /> : <PublicNavigator />
             }
             {/* <AppNavigator /> */}
         </>

@@ -1,21 +1,21 @@
 import React from 'react'
-import { View, Text } from 'react-native'
-import { AuthContext } from '../../domain/store/auth'
 import { globalTheme } from '../assets/styles/global'
 import Layout from '../components/containers/Layout'
 import NeedHelp from '../components/elements/NeedHelp'
+import Tracking from '../components/elements/Tracking'
 import Header from '../components/ui/Header'
 
 const HomeScreen = () => {
 
-    const context = React.useContext(AuthContext)
-    console.log(context)
+    const [tracking, setTracking] = React.useState(false)
 
     return (
         <>
             <Header />
             <Layout color={globalTheme.colors.terciary}>
-                <NeedHelp />
+                {
+                    !tracking ? <NeedHelp setTracking={setTracking} /> : <Tracking />
+                }
             </Layout>
         </>
     )
