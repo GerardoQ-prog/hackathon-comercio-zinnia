@@ -46,5 +46,6 @@ export const styles = StyleSheet.create({
         fontWeight: "bold",
         alignSelf: "center",
         fontSize: 18,
+        textAlign: 'center'
     },
 })

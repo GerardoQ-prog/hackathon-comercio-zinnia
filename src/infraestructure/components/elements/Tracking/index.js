@@ -13,11 +13,11 @@ const Tracking = () => {
                 <ButtonPrimary text="Detener Seguimiento" />
             </View>
             <View style={styles.container}>
-                <Text style={styles.text}>Tranquila Carla, la alerta ha sido enviado a tus contactos de emergencia, ellos podran ver tu ubicación en tiempo real</Text>
+                <Text style={styles.text}>¿Necesitas contactarte con los numeros de emergencia?</Text>
                 <ButtonPrimary text="Ver números de emergencia" />
             </View>
             <View style={styles.container}>
-                <Text style={styles.text}>Tranquila Carla, la alerta ha sido enviado a tus contactos de emergencia, ellos podran ver tu ubicación en tiempo real</Text>
+                <Text style={styles.text}>Visualiza las comisarias y centros de ayuda mas cercanos a ti</Text>
                 <ButtonPrimary text="Ver comisarias cercanas" />
             </View>
         </View>

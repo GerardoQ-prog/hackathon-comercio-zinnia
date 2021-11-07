@@ -3,7 +3,7 @@ import { globalTheme } from "../../../assets/styles/global";
 
 export const styles = StyleSheet.create({
     container: {
-        marginVertical: 20
+        marginVertical: 10
     },
     text: {
         color: globalTheme.colors.text,
