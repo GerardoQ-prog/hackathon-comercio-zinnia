@@ -3,7 +3,7 @@ import { globalTheme } from "../../../assets/styles/global";
 
 export const styles = StyleSheet.create({
     containerButton: {
-        marginTop: 100
+        marginTop: 80
     },
     text: {
         color: globalTheme.colors.text,

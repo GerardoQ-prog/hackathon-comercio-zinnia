@@ -25,7 +25,6 @@ export const authLogout = (dispatch) => {
 
 export const authRegister = async (register, navigator) => {
     const response = await AuthRepository.postRegister(register)
-    console.log(response)
     if (response.status === 201) {
         Alert.alert('Usuario registrado correctamente')
         navigator.navigate('Login')

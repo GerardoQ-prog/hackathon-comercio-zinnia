@@ -22,7 +22,7 @@ export const ButtonRegister = ({ onPress, text }) => {
 
 export const ButtonPrimary = ({ onPress, text, onLongPress }) => {
     return (
-        <TouchableOpacity onPress={onPress} style={styles.appButtonPrimary} activeOpacity={0.8}>
+        <TouchableOpacity onPress={onPress} style={styles.appButtonPrimary} activeOpacity={0.8} onLongPress={onLongPress}>
             <Text style={styles.appButtonTextPrimary}>{text}</Text>
         </TouchableOpacity>
 

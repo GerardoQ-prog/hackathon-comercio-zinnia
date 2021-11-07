@@ -18,25 +18,25 @@ const CommissionersMap = () => {
     const getCommissioners = async ({ latitude, longitude }) => {
         try {
             const { data, status } = await axios.get(`https://maps.googleapis.com/maps/api/place/search/json`, {
-                    params: {
-                        location: `${latitude},${longitude}`,
-                        rankby: "distance",
-                        types: "police",
-                        sensor: "false",
-                        language: 'es',
-                        key: API_KEY
-                    }
+                params: {
+                    location: `${latitude},${longitude}`,
+                    rankby: "distance",
+                    types: "police",
+                    sensor: "false",
+                    language: 'es',
+                    key: API_KEY
+                }
             });
-            if(status != 200 || data.status != 'OK') return;
+            if (status != 200 || data.status != 'OK') return;
             return data.results;
-        } catch ( err ) {
+        } catch (err) {
             return [];
         }
     }
 
     useEffect(() => {
 
-        async function loadLocationsAndInfo () {
+        async function loadLocationsAndInfo() {
             let { status } = await Location.requestForegroundPermissionsAsync();
             if (status !== 'granted') {
                 setErrorMsg('El permiso para acceder a la localización fue denegado');
@@ -46,7 +46,6 @@ const CommissionersMap = () => {
             setLocation(currentLoc.coords);
             const results = await getCommissioners(currentLoc.coords);
             setCommissioners(results);
-            console.log(results)
         }
 
         loadLocationsAndInfo();
@@ -57,46 +56,46 @@ const CommissionersMap = () => {
         <View style={styles.containerMap}>
             {
                 location != null && errorMsg == null
-                ? (
-                    <>
-                        <View style={styles.floatTitle}>
-                            <Text style={styles.title}>Comisarías cercanas</Text>
-                        </View>
-                        <MapView
-                            style={styles.map}
-                            initialRegion={{
-                                latitude: location.latitude,
-                                longitude: location.longitude,
-                                latitudeDelta: 0.0922,
-                                longitudeDelta: 0.0421,
-                            }}
-                        >
+                    ? (
+                        <>
+                            <View style={styles.floatTitle}>
+                                <Text style={styles.title}>Comisarías cercanas</Text>
+                            </View>
+                            <MapView
+                                style={styles.map}
+                                initialRegion={{
+                                    latitude: location.latitude,
+                                    longitude: location.longitude,
+                                    latitudeDelta: 0.0922,
+                                    longitudeDelta: 0.0421,
+                                }}
+                            >
 
-                            { commissioners.map((marker, index) => (
-                                <Marker
-                                    key={index}
-                                    coordinate={{ latitude: marker.geometry.location.lat, longitude: marker.geometry.location.lng }}
-                                    title={marker.name}
-                                    description={marker.vicinity}
-                                    icon={ Images.policeStation }
-                                />
-                            ))}
+                                {commissioners.map((marker, index) => (
+                                    <Marker
+                                        key={index}
+                                        coordinate={{ latitude: marker.geometry.location.lat, longitude: marker.geometry.location.lng }}
+                                        title={marker.name}
+                                        description={marker.vicinity}
+                                        icon={Images.policeStation}
+                                    />
+                                ))}
 
-                            {
-                                location 
-                                ? (<Marker
-                                        coordinate={location}
-                                        title="Tú ubicación actual"
-                                        icon={Images.person}
-                                    />)
-                                : null 
-                            }
+                                {
+                                    location
+                                        ? (<Marker
+                                            coordinate={location}
+                                            title="Tú ubicación actual"
+                                            icon={Images.person}
+                                        />)
+                                        : null
+                                }
 
-                        </MapView>
-                    </>
-                )
-                : ( <View style={{...styles.floatTitle, ...styles.errorContainer}}>
-                        <Text style={{...styles.title, color: '#AF0000'}}>{ errorMsg }</Text>
+                            </MapView>
+                        </>
+                    )
+                    : (<View style={{ ...styles.floatTitle, ...styles.errorContainer }}>
+                        <Text style={{ ...styles.title, color: '#AF0000' }}>{errorMsg}</Text>
                     </View>)
             }
         </View>

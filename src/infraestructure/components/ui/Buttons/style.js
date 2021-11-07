@@ -3,13 +3,22 @@ import { globalTheme } from "../../../assets/styles/global";
 
 export const styles = StyleSheet.create({
     appButtonContainer: {
-        elevation: 8,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 12,
+        },
+        shadowOpacity: 0.58,
+        shadowRadius: 16.00,
+
+        elevation: 24,
         backgroundColor: globalTheme.colors.terciary,
         borderRadius: 10,
         paddingVertical: 10,
         paddingHorizontal: 12,
         marginVertical: 30,
         marginHorizontal: 30,
+
     },
     appButtonText: {
         fontSize: 18,

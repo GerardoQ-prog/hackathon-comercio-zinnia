@@ -4,6 +4,7 @@ import HomeScreen from '../Home';
 import CommissionersScreen from '../Commissioners';
 import HelpScreen from '../Help';
 import EmergenciesScreen from '../Emergencies';
+import ConfigurationsScreen from '../Configurations';
 
 const Stack = createStackNavigator();
 
@@ -35,6 +36,14 @@ export const EmergenciesNavigator = () => {
     return (
         <Stack.Navigator>
             <Stack.Screen name="Emergencies" component={EmergenciesScreen} options={{ headerShown: false }} />
+        </Stack.Navigator>
+    )
+}
+
+export const ConfigurationsNavigator = () => {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen name="Configurations" component={ConfigurationsScreen} options={{ headerShown: false }} />
         </Stack.Navigator>
     )
 }

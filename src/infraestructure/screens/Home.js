@@ -8,13 +8,20 @@ import Header from '../components/ui/Header'
 const HomeScreen = () => {
 
     const [tracking, setTracking] = React.useState(false)
+    const [init, setInit] = React.useState(null)
+
+    React.useEffect(() => {
+        if (!tracking) {
+            clearInterval(init)
+        }
+    }, [tracking])
 
     return (
         <>
             <Header />
             <Layout color={globalTheme.colors.terciary}>
                 {
-                    !tracking ? <NeedHelp setTracking={setTracking} /> : <Tracking />
+                    !tracking ? <NeedHelp setTracking={setTracking} tracking={tracking} init={init} setInit={setInit} /> : <Tracking setTracking={setTracking} />
                 }
             </Layout>
         </>

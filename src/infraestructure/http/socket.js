@@ -1,11 +1,11 @@
 import { io } from 'socket.io-client'
 
-const socket = io('https://prueba2.castillodetalentos.edu.pe/hackathon-comercio', {  //cambiar url si es necesario
-    path: "/api/socket/connect"
+const socket = io('https://prueba2.castillodetalentos.edu.pe', {  //cambiar url si es necesario
+    path: "/hackathon-comercio/api/socket/connect"
 });
 
-export const trakInit = (id) => {
-    socket.emit("track:init", id);
+export const trakInit = (id, message) => {
+    socket.emit("track:init", { user: id, message });
 }
 
 export const trackOnline = (coord) => {

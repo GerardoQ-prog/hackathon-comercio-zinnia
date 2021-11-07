@@ -35,4 +35,20 @@ export const InputPassword = ({ onChangeText, value, label, name, placeholder = 
     )
 }
 
+export const InputMessage = ({ onChangeText, value, label, name, placeholder = '', editable = true, keyboardType = 'default' }) => {
+    return (
+        <View style={styles.container}>
+            <Text style={styles.labelPrimary}>{label}</Text>
+            <TextInput
+                style={styles.inputPrimary}
+                onChangeText={value => onChangeText(value, name)}
+                value={value}
+                placeholder={placeholder}
+                editable={editable}
+                keyboardType={keyboardType}
+            />
+        </View>
+    )
+}
+
 

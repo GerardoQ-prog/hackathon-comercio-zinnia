@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons'
 
-import { CommissionersNavigator, HomeNavigator, EmergenciesNavigator, HelpNavigator } from './stores.navigator';
+import { CommissionersNavigator, HomeNavigator, EmergenciesNavigator, HelpNavigator, ConfigurationsNavigator } from './stores.navigator';
 import { globalTheme } from '../../assets/styles/global';
 
 const Tab = createBottomTabNavigator();
@@ -45,7 +45,7 @@ export const AppNavigator = () => {
         <Tab.Screen name="Comisarias" component={CommissionersNavigator} />
         <Tab.Screen name="Emergencias" component={EmergenciesNavigator} />
         <Tab.Screen name="Ayuda" component={HelpNavigator} />
-        <Tab.Screen name="Configuración" component={HelpNavigator} />
+        <Tab.Screen name="Configuración" component={ConfigurationsNavigator} />
       </Tab.Navigator>
     </NavigationContainer>
   )
