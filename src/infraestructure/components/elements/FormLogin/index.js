@@ -29,7 +29,7 @@ const FormLogin = () => {
     return (
         <KeyboardAvoidingView behavior="position">
             <View style={styles.container}>
-                <Image source={Images.logo} style={{ marginLeft: 30 }} />
+                <Image source={Images.logo} style={{ marginLeft: 50 }} />
                 <InputText label="Correo" value={form.email} onChangeText={onChange} name="email" />
                 <InputPassword label="Contraseña" value={form.password} onChangeText={onChange} name="password" />
                 <ButtonSecondary text="Iniciar sesión" onPress={handlerSubmit} />

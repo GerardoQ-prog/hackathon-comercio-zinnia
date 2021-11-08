@@ -25,7 +25,7 @@ const FormRegister = () => {
     return (
         <KeyboardAvoidingView behavior="height">
             <View style={styles.container}>
-                <Image source={Images.logo} style={{ marginLeft: 30 }} />
+                <Image source={Images.logo} style={{ marginLeft: 50 }} />
                 <InputText label="DNI" value={form.dni} onChangeText={onChange} name="dni" />
                 <InputText label="Nombre Completo" value={form.fullName} onChangeText={onChange} name="fullName" />
                 <InputText label="Celular" value={form.phone} onChangeText={onChange} name="phone" />

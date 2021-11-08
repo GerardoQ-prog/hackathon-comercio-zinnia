@@ -53,7 +53,7 @@ const NeedHelp = ({ setTracking, tracking, init, setInit }) => {
     return (
         <View>
             <View>
-                <Image source={Images.logo} style={{ marginLeft: 30 }} />
+                <Image source={Images.logo} style={{ marginLeft: 50 }} />
             </View>
             <View style={styles.containerButton}>
                 <Text style={styles.text}>Si te encuentras en una situación de peligro, presiona el siguiente boton para alertar a tus contactos de emergencia</Text>
